@@ -51,10 +51,11 @@
     .topbar-inner{width:100%; max-width:1200px; display:flex; align-items:center; gap:16px}
     .brand{display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--text)}
     /* Logo scales smoothly on all screen sizes */
-.brand img {
-  height: clamp(70px, 14vw, 140px);
-  width: auto;
-  display: block;
+@media (max-width: 640px) {
+  .brand img {
+    height: clamp(58px, 18vw, 95px) !important;
+    width: auto;
+  }
 }
     .brand .name{font-weight:700; letter-spacing:.2px}
     .spacer{flex:1}
