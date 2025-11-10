@@ -175,6 +175,34 @@
     flex: 1;
   }
 }
+    /* ===== FIX TOPBAR LAYOUT & CTA POSITION ===== */
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left / button right */
+}
+
+.spacer {
+  flex-grow: 1; /* pushes button to right */
+}
+
+/* Ensure topbar button doesn't shrink oddly */
+.topbar .cta {
+  flex-shrink: 0;
+}
+    @media (max-width: 640px) {
+
+  .brand img {
+    height: 135px !important; /* slightly larger now */
+    width: auto !important;
+  }
+
+  .topbar .cta {
+    padding: 8px 14px !important;
+    font-size: 14px !important;
+    transform: scale(0.93);
+  }
+}
   </style>
 </head>
 <body>
