@@ -50,6 +50,12 @@
     }
     .topbar-inner{width:100%; max-width:1200px; display:flex; align-items:center; gap:16px}
     .brand{display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--text)}
+    /* Desktop / default logo scale (add this) */
+.brand img {
+  height: clamp(60px, 7vw, 105px);
+  width: auto;
+  display: block;
+}
     /* Logo scales smoothly on all screen sizes */
 @media (max-width: 640px) {
   .brand img {
