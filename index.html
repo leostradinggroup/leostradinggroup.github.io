@@ -140,12 +140,12 @@
     /* ===== Footer ===== */
     footer{padding:40px 20px; color:#9aa0a6; border-top:1px solid var(--border)}
     .small{font-size:12px}
-    /* ===== MOBILE TOPBAR REFINEMENT (UPDATED) ===== */
+    /* ===== MOBILE TOPBAR REFINEMENT (FINAL) ===== */
 @media (max-width: 640px) {
 
   .topbar {
-    height: 90px;
-    padding: 0 18px;
+    height: 88px;
+    padding: 0 16px;
   }
 
   .topbar-inner {
@@ -155,22 +155,23 @@
     justify-content: space-between;
   }
 
-  /* Logo sizing */
+  /* Increase logo size a bit more */
   .brand img {
-    max-width: 48%;  /* increased from 38% → slightly larger */
-    height: auto;
+    height: 125px !important; /* was 160 desktop → ~78% mobile scale */
+    width: auto !important;
   }
 
-  /* CTA button sizing */
-  .cta {
-    padding: 8px 14px;       /* reduce height */
-    font-size: 13.5px;       /* reduce text size */
-    border-radius: 999px;    /* keep pill shape */
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 4px 14px rgba(0,0,0,.45);
+  /* Fix CTA button resizing properly */
+  .topbar .cta {
+    padding: 7px 14px !important;  /* controls height */
+    font-size: 13px !important;    /* text a bit smaller */
+    border-radius: 999px;
+    white-space: nowrap;
+    transform: scale(0.92);        /* smooth proportional resize */
   }
 
-  /* Keep CTA and logo aligned (prevent stacking) */
-  .topbar-inner .spacer {
+  /* Ensure button stays on the right side */
+  .spacer {
     flex: 1;
   }
 }
