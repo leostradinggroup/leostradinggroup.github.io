@@ -50,7 +50,12 @@
     }
     .topbar-inner{width:100%; max-width:1200px; display:flex; align-items:center; gap:16px}
     .brand{display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--text)}
-    .brand img{height:160px; width:auto; display:block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.65));}
+    /* Logo scales smoothly on all screen sizes */
+.brand img {
+  height: clamp(70px, 14vw, 140px);
+  width: auto;
+  display: block;
+}
     .brand .name{font-weight:700; letter-spacing:.2px}
     .spacer{flex:1}
     .cta{ appearance:none; border:0; cursor:pointer; text-decoration:none; font-weight:700; letter-spacing:.2px;
