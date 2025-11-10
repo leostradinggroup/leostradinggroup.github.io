@@ -140,11 +140,11 @@
     /* ===== Footer ===== */
     footer{padding:40px 20px; color:#9aa0a6; border-top:1px solid var(--border)}
     .small{font-size:12px}
-    /* ===== MOBILE TOPBAR REFINEMENT ===== */
+    /* ===== MOBILE TOPBAR REFINEMENT (UPDATED) ===== */
 @media (max-width: 640px) {
 
   .topbar {
-    height: 80px;
+    height: 90px;
     padding: 0 18px;
   }
 
@@ -152,18 +152,26 @@
     max-width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* keep logo left, CTA right */
+    justify-content: space-between;
   }
 
+  /* Logo sizing */
   .brand img {
-    max-width: 38%;  /* scales based on device width */
-    height: auto;    /* keeps proportions */
+    max-width: 48%;  /* increased from 38% → slightly larger */
+    height: auto;
   }
 
+  /* CTA button sizing */
   .cta {
-    padding: 9px 14px;      /* slightly smaller button */
-    font-size: 14px;        /* smaller text */
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 4px 16px rgba(0,0,0,.45);
+    padding: 8px 14px;       /* reduce height */
+    font-size: 13.5px;       /* reduce text size */
+    border-radius: 999px;    /* keep pill shape */
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 4px 14px rgba(0,0,0,.45);
+  }
+
+  /* Keep CTA and logo aligned (prevent stacking) */
+  .topbar-inner .spacer {
+    flex: 1;
   }
 }
   </style>
@@ -281,23 +289,23 @@
       <div class="card">
         <h4>Copie meus sinais Forex</h4>
         <p class="muted">
-          Receba alertas e oportunidades de compra e venda diretamente no Telegram — e copia para a tua corretora.
+          Receba alertas e oportunidades de compra e venda diretamente no Telegram — e copia para a sua corretora.
         </p>
       </div>
 
       <!-- Card 2 -->
       <div class="card">
-        <h4>Conteúdo educativo diário</h4>
+        <h4>Curso completo</h4>
         <p class="muted">
-          Explicações simples, resumos do mercado e ideias práticas para aprender na prática enquanto acompanha.
+          Aprende o passo a passo como investir, desde o básico até as estratégias que utilizo todos os dias.
         </p>
       </div>
 
       <!-- Card 3 -->
       <div class="card">
-        <h4>Comunidade no Telegram</h4>
+        <h4>Acompanhamento pessoal</h4>
         <p class="muted">
-          Aprende junto com outras pessoas que estão no mesmo caminho — sem complicações e sem pressão.
+          Aprende junto com outras pessoas que estão no mesmo caminho — Tem sempre acesso a suporte direto para esclarecer dúvidas.
         </p>
       </div>
 
