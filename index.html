@@ -203,6 +203,35 @@
   transform: translateY(-2px);
 }
 
+    /* ===== FAQ ===== */
+.faq-list {display:grid; gap:14px; margin-top:28px}
+.faq-item {
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  transition:border-color .25s ease;
+}
+.faq-question {
+  width:100%; text-align:left; cursor:pointer;
+  padding:18px 22px; font-size:16px; font-weight:600; color:var(--text);
+  background:none; border:none; outline:none;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.faq-question .toggle {font-size:22px; opacity:.65; transition:.25s}
+.faq-item.open .faq-question .toggle {transform:rotate(45deg); opacity:1}
+.faq-answer {
+  max-height:0; overflow:hidden;
+  padding:0 22px;
+  color:var(--muted);
+  font-size:15px; line-height:1.5;
+  transition:max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-answer {
+  max-height:500px;
+  padding:0 22px 18px 22px;
+}
+
   </style>
 </head>
 <body>
@@ -350,6 +379,65 @@
 </div>
 
 </section>  
+  <section id="faq" class="section">
+  <div class="shell">
+    <h2 class="title">Perguntas Frequentes</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Preciso ter experiência para usar a plataforma?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Não. A plataforma foi criada para ser simples e automática. Não precisas de saber analisar gráficos nem ter experiência no mercado — explico tudo passo a passo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          A plataforma faz tudo por mim?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A ferramenta copia automaticamente as minhas estratégias para a tua conta. Mas o controle é sempre teu — podes pausar, ajustar ou parar quando quiseres.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Tenho de instalar algum software?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Não. Tudo acontece online. Só precisas conectar tua conta — explico como fazer em poucos passos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Posso parar ou sair quando quiser?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim. O controle é sempre teu. Podes remover a conexão a qualquer momento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Consigo ver resultados e estatísticas da minha conta?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim. Tens acesso a um painel simples onde vês lucros, histórico, gráficos e evolução da tua conta.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   
   <!-- Logo acima do Aviso Legal -->
 <div style="text-align:center; margin-top:80px; margin-bottom:20px;">
@@ -406,5 +494,15 @@
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
+  <script>
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
+    if(!isOpen) item.classList.add("open");
+  });
+});
+</script>
 </body>
 </html>
